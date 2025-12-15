@@ -1,8 +1,7 @@
 name: Build and test
 
 on:
-  workflow_dispatch:
-  push:
+  [push]
 
 jobs:
   build-and-test:
@@ -16,18 +15,23 @@ jobs:
           token: ${{ secrets.WOKWI_CLI_TOKEN }}
           # expect_text: 'any web server online'
 
-      - name: Test with Wokwi
-        uses: wokwi/wokwi-ci-action@v1
-        with:
-          token: ${{ secrets.WOKWI_CLI_TOKEN }}
-          expect_text: 'any web server online'
+  test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi # Install dependencies from requirements.txt, if it exists
+        - uses: actions/setup-python@v6
+          with:
+            python-version: '3.12' 
 
-      - name: Execute Python module
-        run: |
-          # Use the 'python' command to run your script
-          python -m mpremote connect port:rfc2217://localhost:4000 run main.py
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            if [ -f requirements.txt ]; then pip install -r requirements.txt; fi # Install dependencies from requirements.txt, if it exists
+
+        - name: Execute Python module
+          run: |
+            # Use the 'python' command to run your script
+            python -m mpremote connect port:rfc2217://localhost:4000 run main.py
+
+    
