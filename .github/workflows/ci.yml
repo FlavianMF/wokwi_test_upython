@@ -9,11 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5 # Action to set up a Python environment
+
+      - name: Test with Wokwi
+        uses: wokwi/wokwi-ci-action@v1
         with:
-          python-version: '3.11' # Specify the Python version
+          token: ${{ secrets.WOKWI_CLI_TOKEN }}
+          # expect_text: 'any web server online'
+
+      - name: Test with Wokwi
+        uses: wokwi/wokwi-ci-action@v1
+        with:
+          token: ${{ secrets.WOKWI_CLI_TOKEN }}
+          expect_text: 'any web server online'
 
       - name: Install dependencies
         run: |
@@ -23,16 +30,4 @@ jobs:
       - name: Execute Python module
         run: |
           # Use the 'python' command to run your script
-          python my_module.py # Replace 'my_module.py' with the path to your script
-
-      - name: esp-idf build
-        uses: espressif/esp-idf-ci-action@v1
-        with:
-          esp_idf_version: v5.3
-          target: esp32
-          path: '.'
-      - name: Test with Wokwi
-        uses: wokwi/wokwi-ci-action@v1
-        with:
-          token: ${{ secrets.WOKWI_CLI_TOKEN }}
-          expect_text: 'any web server online'
+          python -m mpremote connect port:rfc2217://localhost:4000 run main.py
