@@ -14,8 +14,8 @@
   },
   "flash_files": {
     "0x1000": "binaries/bootloader.bin",
-    "0x8000": "partition_table/partition-table.bin",
-    "0x10000": "micropython.bin",
+    "0x8000": "binaries/partition-table.bin",
+    "0x10000": "binaries/micropython.bin",
     "0x200000": "fs.bin"
   },
   "bootloader": {
