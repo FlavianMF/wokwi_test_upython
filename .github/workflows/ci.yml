@@ -22,16 +22,8 @@ jobs:
 
     - name: Run container and generate fs.bin
       run: |
-        docker run --name esp32-fs-builder esp32-builder /bin/bash -c "
-          git clone https://github.com/earlephilhower/mklittlefs.git && \
-          cd mklittlefs && \
-          git submodule update --init && \
-          make dist && \
-          ./mklittlefs --version && \
-          mkdir -p ~/fs && \
-          cp /main.py ~/fs/main.py && \
-          ./mklittlefs -c ~/fs -b 4096 -p 256 -s 0x200000 /fs.bin
-        "
+        docker run --name esp32-fs-builder esp32-builder /bin/bash
+        
         docker cp esp32-fs-builder:/fs.bin .
 
     - name: Upload fs.bin artifact
