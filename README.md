@@ -1,123 +1,229 @@
-# Template do Projeto – Etapa Classificatória
+# Processo Seletivo – Intensivo Maker | Edge AI  
+## Etapa Prática – Sistemas Embarcados
 
-Este repositório serve como template oficial da etapa classificatória do curso.
+Bem-vindo(a) à **etapa prática do processo seletivo para o Intensivo Maker | Edge AI**.
 
-Cada aluno deverá fazer um fork, configurar seu ambiente e desenvolver um pequeno projeto utilizando o Wokwi, seguindo os conceitos aprendidos durante o curso (microcontroladores, lógica de programação, eletrônica básica e integração com simulação).
-O objetivo desta etapa é avaliar sua capacidade de estruturar um projeto simples, funcional, organizado e executado automaticamente via GitHub Actions.
+Esta atividade tem como objetivo avaliar suas competências em **Sistemas Embarcados**, com foco em **organização de projeto, lógica de firmware e simulação de hardware**, a partir da aplicação prática dos conhecimentos adquiridos nos cursos EAD da etapa anterior.
 
-## 1. Objetivos da Etapa
+> 🎯 **Objetivo principal**  
+> Avaliar sua capacidade de **planejar, estruturar e desenvolver** uma solução funcional de sistemas embarcados, seguindo boas práticas de engenharia.
 
-Nesta fase, você deverá:
-Criar um projeto simples utilizando o Wokwi (ex.: piscar LED, leitura de botão, sensor, lógica de estado, etc.).
-Desenvolver sua solução dentro deste repositório (após fazer o fork).
-Garantir que o projeto execute corretamente no Wokwi via GitHub Actions.
-Seguir as instruções de organização, estrutura e boas práticas definidas neste template.
+---
 
-## 2. O que este repositório já inclui
+## 🏁 Passo 0 – Antes de Tudo
 
-Este template contém:
-Estrutura inicial do projeto
-Arquivos básicos para execução do Wokwi
-GitHub Actions pré-configuradas para:
-Build do projeto
-Execução automática no Wokwi CLI
-Arquitetura mínima esperada do projeto
-Este README, com todas as instruções necessárias
-Após o setup, as Actions rodarão automaticamente sempre que você fizer push no repositório.
+Se você **nunca utilizou Git ou GitHub**, não se preocupe.  
+Siga atentamente os passos abaixo — eles fazem parte do processo de aprendizagem esperado.
 
-## 3. Como usar este template
+---
 
-### 3.1. Criar seu fork
+### 1️⃣ Criação de Conta no GitHub
 
-Acesse a página deste template.
-Clique em Fork (no canto superior direito).
-Escolha sua conta pessoal.
-Confirme a criação do fork.
-Você agora terá seu próprio repositório, onde fará todo o desenvolvimento.
+1. Acesse: https://github.com  
+2. Clique em **Sign up**  
+3. Crie sua conta gratuita seguindo as instruções da plataforma  
 
-## 4. Criar sua conta no GitHub (caso ainda não tenha)
+> 📌 O GitHub será utilizado para:
+> - Envio do seu projeto  
+> - Versionamento do código  
+> - Correção e validação automática via GitHub Actions  
 
-Se você ainda não possui uma conta no GitHub:
-Acesse: <https://github.com>
-Clique em Sign Up
-Complete:
-Email
-Usuário
-Senha
-Verificação
-Confirme seu email
-Após isso, volte ao passo de criar o fork.
+---
 
-## 5. Criando sua API Key do Wokwi
+### 2️⃣ Instalação do Git
 
-Você precisará de uma chave de API para permitir que o GitHub Actions execute sua simulação no Wokwi.
-Siga os passos:
-Acesse: <https://wokwi.com/dashboard/cli>
-Faça login (Google ou GitHub).
-Clique em Generate API Token.
-Copie sua chave gerada (formato parecido com: wokwi-xxxxxxx).
-IMPORTANTE:
-Nunca commit essa chave no repositório.
-Ela deve ser configurada como secret.
+O **Git** é a ferramenta responsável pelo controle de versões do seu código.
 
-## 6. Configurando sua API Key no GitHub (Secrets)
+### Windows
+Baixe e instale o **Git Bash**:  
+https://git-scm.com/downloads
 
-No repositório do seu fork:
-Vá em Settings
-Acesse Secrets and variables > Actions
-Clique em New repository secret
-Nome: WOKWI_API_KEY
-Valor: sua chave gerada
-Salve
-As Actions do template já estão preparadas para usar essa variável.
+### Linux / macOS
+Verifique se o Git já está instalado:
 
-## 7. Estrutura esperada do projeto
+```bash
+git --version
+```
+> Caso não esteja, instale pelo gerenciador de pacotes do seu sistema.
 
-A estrutura mínima do seu projeto deve ser:
+## ⚙ Passo 1 – Preparando o Ambiente
+
+Para desenvolver o desafio, você deverá criar uma cópia deste repositório no seu GitHub.
+
+### 1️⃣ Fork do Repositório
+No canto superior direito desta página, clique em Fork
+
+<img width="219" height="45" alt="image" src="https://github.com/user-attachments/assets/5d629626-513a-445c-ba0f-e5bb3e225187" />
+
+
+Uma cópia do repositório será criada no seu perfil do GitHub
+
+> 🔎 O Fork permite que você trabalhe de forma independente, sem alterar o repositório original do processo seletivo.
+
+### 2️⃣ Clone do Repositório
+
+No repositório do seu Fork, clique em **<> Code**
+
+<img width="149" height="52" alt="image" src="https://github.com/user-attachments/assets/abbd331b-a005-4633-89c6-afd16acbe828" />
+
+Copie a URL e execute no terminal:
+
+```bash
+git clone https://github.com/SEU_USUARIO/nome-do-repositorio.git
+cd nome-do-repositorio
+```
+
+> O comando git clone cria uma cópia local do repositório para desenvolvimento.
+
+### 3️⃣ Preparação do Ambiente de Execução
+
+Você pode executar o projeto de duas formas. Escolha apenas uma.
+
+#### 🔹 Opção A – Ambiente Python Local
+
+**Requisitos:**
+
+- Python 3.10 ou 3.11
+- pip
+
+**Instale as dependências:**
+
+```bash
+pip install -r requirements.txt
+```
+
+#### 🔹 Opção B – Dev Container (Recomendado)
+
+Este repositório inclui um Dev Container, garantindo um ambiente padronizado.
+
+**Requisitos:**
+
+- VS Code
+- Docker instalado
+- Extensão Dev Containers
+
+**Passos:**
+
+1. Abra o repositório no VS Code
+2. Clique em “Reopen in Container”
+3. Aguarde a criação automática do ambiente
+
+> ➡️ Todas as dependências serão instaladas automaticamente.
+
+## 🔐 Passo 2 – Criando sua API Key do Wokwi
+
+A simulação do projeto será executada automaticamente via GitHub Actions, utilizando o Wokwi CLI.
+
+Para isso, você precisa gerar uma API Key.
+
+1. Acesse: https://wokwi.com/dashboard/cli
+2. Faça login (Google ou GitHub)
+3. Clique em Generate API Token
+4. Copie a chave gerada (exemplo: wokwi-xxxxxxxx)
+
+>⚠️ Importante
+- Nunca faça commit dessa chave
+- Ela deve ser armazenada apenas como secret no GitHub
+
+## 🔒 Passo 3 – Configurando a API Key no GitHub (Secrets)
+
+**No repositório do seu Fork:**
+
+1. Vá em Settings
+2. Acesse Secrets and variables → Actions
+3. Clique em New repository secret
+4. Nome: WOKWI_API_KEY
+5. Valor: sua chave gerada
+6. Salve
+
+> ✔️ As GitHub Actions do template já estão preparadas para usar essa variável automaticamente.
+
+## 🧠 Passo 4 – Desafio Técnico
+
+Você deverá desenvolver um projeto de sistemas embarcados simulados, utilizando Python e Wokwi.
+
+### 📁 Estrutura mínima esperada
+
 ```text
 /project
-  ├── src/
-  │   └── main.py       (seu código Python)
-  ├── wokwi.toml        (configuração da simulação)
-  ├── diagram.json      (circuito do Wokwi)
-  └── README.md         (explicações específicas do seu projeto)
+ ├── src/
+ │   └── main.py        # Código principal do projeto
+ ├── wokwi.toml         # Configuração da simulação
+ ├── diagram.json       # Circuito no Wokwi
+ └── README.md          # Explicação do seu projeto
 ```
-Você pode expandir essa estrutura conforme necessário, desde que mantenha os arquivos essenciais.
 
-## 8. Como desenvolver seu projeto
+> Você pode expandir essa estrutura se desejar, desde que mantenha os arquivos essenciais.
 
-Para desenvolver seu projeto, você irá principalmente editar o arquivo `src/main.py`. Este arquivo contém o código Python que será executado na simulação do Wokwi.
+### 🛠 Como Desenvolver seu Projeto
 
-1.  **Edite o código em `src/main.py`**: Abra o 
-arquivo `src/main.py` e escreva seu código Python. Este é o local onde você implementará a lógica do seu projeto, como controlar LEDs, ler sensores, etc.
+O desenvolvimento acontece principalmente nos arquivos abaixo:
 
-2.  **Configure os componentes no `diagram.json`**: Se o seu projeto envolver hardware virtual (como LEDs, botões, sensores), você precisará configurá-los no arquivo `diagram.json`. Este arquivo descreve o circuito do seu projeto no Wokwi.
+#### 1️⃣ src/main.py
 
-3.  **Ajuste parâmetros no `wokwi.toml`**: Este arquivo é usado para configurar a simulação do Wokwi, como o tipo de placa, bibliotecas adicionais, etc. Ajuste-o conforme necessário para o seu projeto.
+- Código Python executado na simulação
+- Implementa a lógica do sistema embarcado
+- Exemplos: controle de LEDs, leitura de sensores, estados, temporizações, etc.
 
-4.  **Commit e push normalmente**: Após fazer suas alterações, salve os arquivos, faça um commit das suas mudanças e envie-as para o seu repositório no GitHub.
+#### 2️⃣ diagram.json
 
-O GitHub Actions irá automaticamente:
-*   Fazer o build do projeto (se aplicável, para microcontroladores).
-*   Executar o Wokwi CLI para simular seu projeto.
-*   Validar que sua simulação roda sem erros.
+- Define o hardware virtual do projeto
+- Componentes como:
+  - LEDs
+  - Botões
+  - Sensores
+  - Placa microcontroladora
 
-Quaisquer erros ou falhas na simulação aparecerão diretamente na aba "Actions" do seu repositório no GitHub. Verifique os logs da execução para depurar problemas.
+#### 3️⃣ wokwi.toml
 
-## 9. Critérios de Avaliação da Etapa
+- Configura a simulação:
+  - Tipo de placa
+  - Framework
+  - Dependências adicionais
+
+#### 4️⃣ Commit e Push
+
+Após suas alterações:
+
+```bash
+git add .
+git commit -m "Descrição clara do que foi feito"
+git push
+```
+#### ⚙ Execução Automática (GitHub Actions)
+
+A cada push, o GitHub Actions irá automaticamente:
+
+- Executar o pipeline de build
+- Rodar a simulação via Wokwi CLI
+- Validar que o projeto executa sem erros
+
+📌 Caso algo falhe:
+
+- Vá até a aba Actions
+- Analise os logs da execução
+- Corrija e envie novamente
+
+## 📊 Critérios de Avaliação
 
 Esta etapa será avaliada considerando:
-Funcionamento da simulação
-Código organizado
-Estrutura de arquivos correta
-Uso correto do Wokwi
-Commits claros
-Projeto executando sem falhas nas Actions
 
-## 10. Suporte
+- Funcionamento correto da simulação
+- Código organizado e legível
+- Estrutura de arquivos correta
+- Uso adequado do Wokwi
+- Commits claros e bem descritos
+- Projeto executando sem falhas nas Actions
+
+## 🆘 Suporte
 
 Em caso de dúvidas:
-Consulte o material do curso
-Leia cuidadosamente este README
-Veja os logs da Action
-A comunidade e os instrutores estarão disponíveis nos canais oficiais
+
+- Consulte o material dos cursos EAD
+- Leia atentamente este README
+- Analise os logs das GitHub Actions
+- Utilize os canais oficiais para contato com os instrutores
+
+Boa sorte no processo seletivo.
+Mostre sua capacidade de pensar como um engenheiro de sistemas embarcados.
+****
