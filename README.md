@@ -110,6 +110,17 @@ Este repositório inclui um Dev Container, garantindo um ambiente padronizado.
 
 > ➡️ Todas as dependências serão instaladas automaticamente.
 
+#### Opção B - via browser
+
+Você também pode abrir o container via  _github codespace_
+
+1. Clique em **<> Code**
+2. Clique em Codespaces
+3. Clique em **Create codespace on <NOME DA SUA BRANCH>**
+   <img width="838" height="415" alt="image" src="https://github.com/user-attachments/assets/444f114f-9299-4a81-a4b9-cf27032f8848" />
+
+> Será aberto uma instância do VS Code no seu navegador com o container configurado
+
 ## 🔐 Passo 2 – Criando sua API Key do Wokwi
 
 A simulação do projeto será executada automaticamente via GitHub Actions, utilizando o Wokwi CLI.
@@ -132,9 +143,11 @@ Para isso, você precisa gerar uma API Key.
 1. Vá em Settings
 2. Acesse Secrets and variables → Actions
 3. Clique em New repository secret
-4. Nome: WOKWI_API_KEY
-5. Valor: sua chave gerada
-6. Salve
+   <img width="1666" height="1011" alt="image" src="https://github.com/user-attachments/assets/a9c8f988-c4a9-4068-9ee1-88912139ebeb" />
+5. Nome: WOKWI_API_KEY
+6. Valor: sua chave gerada
+   <img width="748" height="419" alt="image" src="https://github.com/user-attachments/assets/6fe3d292-fcbc-4027-b0fa-99c39749fad4" />
+8. Salve
 
 > ✔️ As GitHub Actions do template já estão preparadas para usar essa variável automaticamente.
 
