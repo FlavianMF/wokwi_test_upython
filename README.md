@@ -165,7 +165,7 @@ Você deverá desenvolver um projeto de sistemas embarcados simulados, utilizand
 
 O projeto está organizado com dois diretórios principais para a simulação Wokwi: `esp32_develop` e `esp32_release`.
 
-- **`esp32_develop/`**: Contém os arquivos de configuração (`diagram.json`, `flasher_args.json`, `wokwi.toml`) para o ambiente de desenvolvimento local. Este diretório é utilizado para rodar a simulação com o `wmpremote` e desenvolver localmente.
+- **`esp32_develop/`**: Contém os arquivos de configuração (`diagram.json`, `flasher_args.json`, `wokwi.toml`) para o ambiente de desenvolvimento local. **Utilize o script `wmpremote.sh` para rodar a simulação neste ambiente e auxiliar no desenvolvimento local, enviando o código do `src/main.py` para o ambiente Wokwi. Certifique-se de que o arquivo `esp32_develop/diagram.json` esteja sempre atualizado com o diagrama da sua simulação.**
 - **`esp32_release/`**: Contém os arquivos de configuração (`diagram.json`, `flasher_args.json`, `wokwi.toml`) para o ambiente de testes na integração contínua (CI).
 
 O desenvolvimento acontece principalmente nos arquivos abaixo:
