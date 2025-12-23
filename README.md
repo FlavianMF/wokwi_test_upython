@@ -114,7 +114,7 @@ Este repositório inclui um Dev Container, garantindo um ambiente padronizado.
 
 A simulação do projeto será executada automaticamente via GitHub Actions, utilizando o Wokwi CLI.
 
-Para isso, você precisa gerar uma API Key.
+Para isso, você precisa gerar **uma** API Key.
 
 1. Acesse: https://wokwi.com/dashboard/cli
 2. Faça login (Google ou GitHub)
@@ -148,14 +148,25 @@ Você deverá desenvolver um projeto de sistemas embarcados simulados, utilizand
 /project
  ├── src/
  │   └── main.py        # Código principal do projeto
- ├── wokwi.toml         # Configuração da simulação
- ├── diagram.json       # Circuito no Wokwi
+ ├── esp32_develop/
+ │   ├── diagram.json   # Circuito no Wokwi para desenvolvimento local
+ │   ├── flasher_args.json # Argumentos do flasher para desenvolvimento local
+ │   └── wokwi.toml     # Configuração da simulação para desenvolvimento local
+ ├── esp32_release/
+ │   ├── diagram.json   # Circuito no Wokwi para testes na CI
+ │   ├── flasher_args.json # Argumentos do flasher para testes na CI
+ │   └── wokwi.toml     # Configuração da simulação para testes na CI
  └── README.md          # Explicação do seu projeto
 ```
 
 > Você pode expandir essa estrutura se desejar, desde que mantenha os arquivos essenciais.
 
 ### 🛠 Como Desenvolver seu Projeto
+
+O projeto está organizado com dois diretórios principais para a simulação Wokwi: `esp32_develop` e `esp32_release`.
+
+- **`esp32_develop/`**: Contém os arquivos de configuração (`diagram.json`, `flasher_args.json`, `wokwi.toml`) para o ambiente de desenvolvimento local. Este diretório é utilizado para rodar a simulação com o `wmpremote` e desenvolver localmente.
+- **`esp32_release/`**: Contém os arquivos de configuração (`diagram.json`, `flasher_args.json`, `wokwi.toml`) para o ambiente de testes na integração contínua (CI).
 
 O desenvolvimento acontece principalmente nos arquivos abaixo:
 
