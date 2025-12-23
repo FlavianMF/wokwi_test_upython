@@ -1,0 +1,24 @@
+{
+    "name": "Pyton Enviroment",
+    "image": "mcr.microsoft.com/devcontainers/python:3.9-bookworm",
+    "features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {} 
+    },
+	"postCreateCommand": "sudo apt update -y && sudo apt install socat -y && python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt",
+
+    // Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+                "ms-python.python",
+				"wokwi.wokwi-vscode"
+			]
+		}
+	},
+
+	"privileged": true,
+	// "remoteUser": "root"
+}

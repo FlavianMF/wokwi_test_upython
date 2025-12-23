@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 # Template do Projeto – Etapa Classificatória
+=======
+# Processo Seletivo – Intensivo Maker | Edge AI  
+
+## Etapa Prática – Sistemas Embarcados
+>>>>>>> Stashed changes
 
 Este repositório serve como template oficial da etapa classificatória do curso.
 
@@ -29,6 +35,7 @@ Após o setup, as Actions rodarão automaticamente sempre que você fizer push n
 
 ### 3.1. Criar seu fork
 
+<<<<<<< Updated upstream
 Acesse a página deste template.
 Clique em Fork (no canto superior direito).
 Escolha sua conta pessoal.
@@ -36,6 +43,17 @@ Confirme a criação do fork.
 Você agora terá seu próprio repositório, onde fará todo o desenvolvimento.
 
 ## 4. Criar sua conta no GitHub (caso ainda não tenha)
+=======
+1. Acesse: <https://github.com>  
+2. Clique em **Sign up**  
+3. Crie sua conta gratuita seguindo as instruções da plataforma  
+
+> 📌 O GitHub será utilizado para:
+>
+> - Envio do seu projeto  
+> - Versionamento do código  
+> - Correção e validação automática via GitHub Actions  
+>>>>>>> Stashed changes
 
 Se você ainda não possui uma conta no GitHub:
 Acesse: <https://github.com>
@@ -60,6 +78,7 @@ IMPORTANTE:
 Nunca commit essa chave no repositório.
 Ela deve ser configurada como secret.
 
+<<<<<<< Updated upstream
 ## 6. Configurando sua API Key no GitHub (Secrets)
 
 No repositório do seu fork:
@@ -72,6 +91,134 @@ Salve
 As Actions do template já estão preparadas para usar essa variável.
 
 ## 7. Estrutura esperada do projeto
+=======
+### Windows
+
+Baixe e instale o **Git Bash**:  
+<https://git-scm.com/downloads>
+
+### Linux / macOS
+
+Verifique se o Git já está instalado:
+
+```bash
+git --version
+```
+
+> Caso não esteja, instale pelo gerenciador de pacotes do seu sistema.
+
+## ⚙ Passo 1 – Preparando o Ambiente
+
+Para desenvolver o desafio, você deverá criar uma cópia deste repositório no seu GitHub.
+
+### 1️⃣ Fork do Repositório
+
+No canto superior direito desta página, clique em Fork
+
+<img width="219" height="45" alt="image" src="https://github.com/user-attachments/assets/5d629626-513a-445c-ba0f-e5bb3e225187" />
+
+Uma cópia do repositório será criada no seu perfil do GitHub
+
+> 🔎 O Fork permite que você trabalhe de forma independente, sem alterar o repositório original do processo seletivo.
+
+### 2️⃣ Clone do Repositório
+
+No repositório do seu Fork, clique em **<> Code**
+
+<img width="149" height="52" alt="image" src="https://github.com/user-attachments/assets/abbd331b-a005-4633-89c6-afd16acbe828" />
+
+Copie a URL e execute no terminal:
+
+```bash
+git clone https://github.com/SEU_USUARIO/nome-do-repositorio.git
+cd nome-do-repositorio
+```
+
+> O comando git clone cria uma cópia local do repositório para desenvolvimento.
+
+### 3️⃣ Preparação do Ambiente de Execução
+
+Você pode executar o projeto de duas formas. Escolha apenas uma.
+
+#### 🔹 Opção A – Ambiente Python Local
+
+**Requisitos:**
+
+- Python 3.10 ou 3.11
+- pip
+
+**Instale as dependências:**
+
+```bash
+pip install -r requirements.txt
+```
+
+#### 🔹 Opção B – Dev Container (Recomendado)
+
+Este repositório inclui um Dev Container, garantindo um ambiente padronizado.
+
+**Requisitos:**
+
+- VS Code
+- Docker instalado
+- Extensão Dev Containers
+
+**Passos:**
+
+1. Abra o repositório no VS Code
+2. Clique em “Reopen in Container”
+3. Aguarde a criação automática do ambiente
+
+> ➡️ Todas as dependências serão instaladas automaticamente.
+
+#### Opção B - via browser
+
+Você também pode abrir o container via  _github codespace_
+
+1. Clique em **<> Code**
+2. Clique em Codespaces
+3. Clique em **Create codespace on <NOME DA SUA BRANCH>**
+   <img width="838" height="415" alt="image" src="https://github.com/user-attachments/assets/444f114f-9299-4a81-a4b9-cf27032f8848" />
+
+> Será aberto uma instância do VS Code no seu navegador com o container configurado
+
+## 🔐 Passo 2 – Criando sua API Key do Wokwi
+
+A simulação do projeto será executada automaticamente via GitHub Actions, utilizando o Wokwi CLI.
+
+Para isso, você precisa gerar uma API Key.
+
+1. Acesse: <https://wokwi.com/dashboard/ci>
+2. Faça login (Google ou GitHub)
+3. Clique em Generate API Token
+4. Copie a chave gerada (exemplo: wokwi-xxxxxxxx)
+
+>⚠️ Importante
+
+- Nunca faça commit dessa chave
+- Ela deve ser armazenada apenas como secret no GitHub
+
+## 🔒 Passo 3 – Configurando a API Key no GitHub (Secrets)
+
+**No repositório do seu Fork:**
+
+1. Vá em Settings
+2. Acesse Secrets and variables → Actions
+3. Clique em New repository secret
+   <img width="1666" height="1011" alt="image" src="https://github.com/user-attachments/assets/a9c8f988-c4a9-4068-9ee1-88912139ebeb" />
+4. Nome: WOKWI_API_KEY
+5. Valor: sua chave gerada
+   <img width="748" height="419" alt="image" src="https://github.com/user-attachments/assets/6fe3d292-fcbc-4027-b0fa-99c39749fad4" />
+6. Salve
+
+> ✔️ As GitHub Actions do template já estão preparadas para usar essa variável automaticamente.
+
+## 🧠 Passo 4 – Desafio Técnico
+
+Você deverá desenvolver um projeto de sistemas embarcados simulados, utilizando Python e Wokwi.
+
+### 📁 Estrutura mínima esperada
+>>>>>>> Stashed changes
 
 A estrutura mínima do seu projeto deve ser:
 ```text
@@ -104,7 +251,40 @@ O GitHub Actions irá automaticamente:
 
 Quaisquer erros ou falhas na simulação aparecerão diretamente na aba "Actions" do seu repositório no GitHub. Verifique os logs da execução para depurar problemas.
 
+<<<<<<< Updated upstream
 ## 9. Critérios de Avaliação da Etapa
+=======
+- Configura a simulação:
+  - Tipo de placa
+  - Framework
+  - Dependências adicionais
+
+#### 4️⃣ Commit e Push
+
+Após suas alterações:
+
+```bash
+git add .
+git commit -m "Descrição clara do que foi feito"
+git push
+```
+
+### ⚙ Execução Automática (GitHub Actions)
+
+A cada push, o GitHub Actions irá automaticamente:
+
+- Executar o pipeline de build
+- Rodar a simulação via Wokwi CLI
+- Validar que o projeto executa sem erros
+
+### 📌 Caso algo falhe
+
+- Vá até a aba Actions
+- Analise os logs da execução
+- Corrija e envie novamente
+
+## 📊 Critérios de Avaliação
+>>>>>>> Stashed changes
 
 Esta etapa será avaliada considerando:
 Funcionamento da simulação
