@@ -114,7 +114,7 @@ Este repositório inclui um Dev Container, garantindo um ambiente padronizado.
 
 A simulação do projeto será executada automaticamente via GitHub Actions, utilizando o Wokwi CLI.
 
-Para isso, você precisa gerar **uma** API Key.
+Para isso, você precisa gerar uma API Key.
 
 1. Acesse: https://wokwi.com/dashboard/cli
 2. Faça login (Google ou GitHub)

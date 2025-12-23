@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - feat/actions-build
+      - feat/release-folder
   pull_request:
     branches:
       - main
@@ -30,5 +31,5 @@ jobs:
       uses: wokwi/wokwi-ci-action@v1
       with:
         token: ${{ secrets.WOKWI_CLI_TOKEN }}
-        path: /
+        path: /esp32_release/
         expect_text: 'Teste'
